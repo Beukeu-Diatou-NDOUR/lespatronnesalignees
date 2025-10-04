@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Cercle des Patronnes Alignées</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Brittany+Signature&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'League Spartan', sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            overflow-x: hidden;
+        }
+
+       .hero {
+         background: 
+        linear-gradient(135deg, rgba(15, 52, 96, 0.85), rgba(26, 26, 46, 0.85)), 
+        url("p2.jpg") center center/contain no-repeat;
+         min-height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: relative;
+         overflow: hidden;
+        padding: 60px 20px;
+        }
+
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(83, 168, 255, 0.15), transparent);
+            border-radius: 50%;
+            top: -250px;
+            right: -250px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(33, 158, 188, 0.1), transparent);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -200px;
+            animation: pulse 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .brand-signature {
+            font-family: 'Brittany Signature', cursive;
+            font-size: 48px;
+            color: #53a8ff;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        h1 {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 70px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #e8f1f7;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease 0.4s both;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #53a8ff;
+            color: white;
+            padding: 22px 55px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 35px rgba(83, 168, 255, 0.4);
+            animation: fadeInUp 1s ease 0.6s both;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 45px rgba(83, 168, 255, 0.6);
+            background: #219ebc;
+        }
+
+        .section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-white {
+            background: #f8f9fa;
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            color: white;
+        }
+
+        .section-title {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .section-dark .section-title {
+            color: white;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            color: #53a8ff;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .pain-points {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .pain-intro {
+            font-size: 22px;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .pain-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .pain-list li {
+            font-size: 22px;
+            padding: 20px 0;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .pain-list li:before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: #53a8ff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .empathy-text {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+            font-weight: 600;
+            color: #0f3460;
+            padding: 30px;
+            background: rgba(83, 168, 255, 0.1);
+            border-radius: 15px;
+        }
+
+        .why-section {
+            font-size: 22px;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-section p {
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background: rgba(83, 168, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid #53a8ff;
+            margin: 40px 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .transformation-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .section-dark .transformation-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .transformation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(83, 168, 255, 0.3);
+        }
+
+        .transformation-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .transformation-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #0f3460;
+        }
+
+        .section-dark .transformation-card h3 {
+            color: #53a8ff;
+        }
+
+        .transformation-card p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .section-dark .transformation-card p {
+            color: #e8f1f7;
+        }
+
+        .program-features {
+            list-style: none;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .program-features li {
+            font-size: 22px;
+            padding: 20px 0;
+            padding-left: 50px;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .program-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #53a8ff;
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        .pricing-box {
+            max-width: 700px;
+            margin: 60px auto;
+            background: white;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .price-old {
+            font-size: 24px;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .price-new {
+            font-size: 56px;
+            color: #0f3460;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .price-note {
+            font-size: 22px;
+            color: #53a8ff;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            font-size: 100px;
+            color: rgba(83, 168, 255, 0.2);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f3460;
+            font-size: 18px;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 60px auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .faq-question {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            font-size: 22px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .final-cta-section {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-choice {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .choice-item {
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .choice-no {
+            font-size: 22px;
+            background: rgba(255, 100, 100, 0.2);
+            border-left: 5px solid #ff6464;
+        }
+
+        .choice-yes {
+            font-size: 22px;
+            background: rgba(83, 168, 255, 0.2);
+            border-left: 5px solid #53a8ff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0f3460;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'League Spartan', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #53a8ff;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: #53a8ff;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'League Spartan', sans-serif;
+        }
+
+        .submit-button:hover {
+            background: #219ebc;
+            transform: translateY(-2px);
+        }
+
+        .payment-info {
+            display: none;
+        }
+
+        .payment-info.active {
+            display: block;
+        }
+
+        .wave-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0f3460;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(83, 168, 255, 0.1);
+            border-radius: 15px;
+        }
+
+        .about-section {
+            margin: 60px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text ul {
+            margin-top: 20px;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .final-message-section {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .final-message-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .final-message-text {
+            color: white;
+        }
+
+        @media (max-width: 968px) {
+            .final-message-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+            h1 { font-size: 42px; }
+            .section-title { font-size: 36px; }
+            .hero-subtitle { font-size: 22px; }
+            .transformation-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .brand-signature { font-size: 32px; }
+            .modal-content {
+                padding: 30px;
+            }
+
+       .hero-image-section img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;       /* centre l'image */
+          object-fit: contain;  /* garde l'image entière sans la couper */
+          border-radius: 15px;  /* optionnel : coins arrondis élégants */
+        }
+
+
+    
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text-section">
+                <div class="brand-signature">Les Patronnes Alignées</div>
+                <h1>Et si en 60 jours, tu passais de l'épuisement à l'épanouissement ?</h1>
+                <p class="hero-subtitle">Rejoins le Cercle des Patronnes Alignées et retrouve confiance, clarté et sérénité dans ta vie professionnelle et personnelle.</p>
+                <button class="cta-button" onclick="openModal()">Oui, je réserve ma place</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Ce que tu vis aujourd'hui</h2>
+            <div class="pain-points">
+                <p class="pain-intro">Tu es une femme ambitieuse, avec du potentiel, des rêves, des projets.<br>Mais la vérité… c'est qu'aujourd'hui, tu te sens :</p>
+                <ul class="pain-list">
+                    <li>Fatiguée de tout porter seule.</li>
+                    <li>Épuisée par la charge mentale, au travail comme à la maison.</li>
+                    <li>Perdue dans tes doutes : "Et si je n'étais pas assez ? Et si c'était trop difficile pour moi ?"</li>
+                    <li>Prisonnière de ce sourire que tu affiches, alors qu'à l'intérieur tu n'en peux plus.</li>
+                </ul>
+                <div class="empathy-text">
+                    Je sais ce que ça fait.<br>Et je sais aussi que ce n'est pas une fatalité.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Pourquoi ce Cercle existe</h2>
+            <div class="why-section">
+                <p>Un jour, j'ai compris que nous étions nombreuses à vivre cette même histoire en silence.</p>
+                <p>Nous avons appris à être fortes, à tout gérer, à ne jamais dire non…</p>
+                <p><strong>Mais à quel prix ?</strong></p>
+                <div class="highlight-box">
+                    C'est pour ça que j'ai créé Le Cercle des Patronnes Alignées :<br>
+                    Un espace sûr, bienveillant, puissant, pour que tu n'aies plus à tout porter seule.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title" style="text-align: left;">Qui suis-je pour t'accompagner ?</h2>
+                        <h3 style="font-size: 32px; color: #53a8ff; margin-bottom: 30px;">Néné G. BATHILY</h3>
+                        <p style="font-size: 22px; padding-left: 25px; position: relative;">Je m’appelle Néné Bathily.
+                            Je suis coach certifiée et consultante en stratégie, avec plus de 15 ans d’expérience dans l’accompagnement de dirigeants, de managers et de femmes en quête de sens.
+                            Pendant des années, j’ai vu des femmes brillantes, talentueuses, mais épuisées.
+                            Des femmes qui doutaient d’elles malgré leur potentiel.
+                            Des femmes qui avaient des rêves… mais qui croyaient que c’était trop difficile.
+                            Moi aussi, j’ai traversé des épreuves qui m’ont forcée à me réaligner.
+                            C’est pour ça que j’ai créé ce Cercle : pour offrir un espace sûr, bienveillant et puissant, où tu n’as plus à tout porter seule.
+                        </p> <br>
+                        
+                        <div style="font-size: 18px; line-height: 1.9; color: #333;">
+                            <p style="font-size: 22px; padding-left: 25px; position: relative;"><strong>Ma mission aujourd'hui :</strong></p>
+                            <ul style="list-style: none; padding-left: 0;">
+                                <li style="font-size: 22px; padding-left: 25px; position: relative;">
+                                    <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                                    Apaiser les femmes fatiguées
+                                </li>
+                                <li style="font-size: 22px; padding-left: 25px; position: relative;">
+                                    <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                                    Éveiller leur confiance
+                                </li>
+                                <li style="font-size: 22px; padding-left: 25px; position: relative;">
+                                    <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                                    Transformer leurs doutes en audace
+                                </li>
+                            </ul> <br>
+                        </div>
+                        <p style="font-size: 22px; padding-left: 25px; position: relative;">
+                            Parce que je sais, au fond, que toi aussi tu peux retrouver ton énergie, poser tes limites et avancer enfin vers la vie que tu rêves de créer.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="p1.jpg" alt="Néné G. BATHILY - Coach et Consultante">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">En 60 jours, voici ta transformation</h2>
+            <p style="font-size: 22px;" class="section-subtitle">Dans ce Cercle, tu vas :</p>
+            <div class="transformation-grid">
+                <div class="transformation-card">
+                    <div class="transformation-icon">→</div>
+                    <h3>Retrouver confiance</h3>
+                    <p style="font-size: 20px;">Croire en toi et en tes capacités</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-icon">→</div>
+                    <h3>Poser tes limites</h3>
+                    <p style="font-size: 22px;">Dire non sans culpabiliser</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-icon">→</div>
+                    <h3>Gagner en clarté</h3>
+                    <p style="font-size: 22px;">Savoir qui tu es, ce que tu veux et où tu vas</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-icon">→</div>
+                    <h3>Avancer concrètement</h3>
+                    <p style="font-size: 22px;">Poser un plan réaliste, adapté à ta vie</p>
+                </div>
+                <div class="transformation-card">
+                    <div class="transformation-icon">→</div>
+                    <h3>Te sentir entourée</h3>
+                    <p style="font-size: 22px;">Marcher avec d'autres femmes comme toi, qui comprennent ce que tu traverses</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 60px; text-align: center;">
+                En 60 jours, tu passeras de "je subis" à "je choisis".
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Le programme – Comment ça marche ?</h2>
+            <ul class="program-features">
+                <li>2 mois d'accompagnement intense et bienveillant</li>
+                <li>3 masterclass par mois → pour avancer pas à pas, avec clarté et énergie</li>
+                <li>Un espace privé → pour échanger, partager, et ne plus être seule</li>
+            </ul>
+            <p style="text-align: center; font-size: 20px; margin-top: 40px; line-height: 1.8;">
+                Chaque session est pensée pour te donner à la fois l'introspection dont tu as besoin<br>
+                et des outils pratiques pour transformer ton quotidien.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Un choix accessible pour toi</h2>
+            <div class="pricing-box">
+                <div class="price-old">Valeur réelle : 250 000 F CFA / mois</div>
+                <div class="price-new">85 000 F CFA</div>
+                <div class="price-period">par mois</div>
+                <div class="price-note">Soit moins d'un tiers de la valeur, pour que tu puisses dire OUI à toi-même sans culpabiliser.</div>
+                <button class="cta-button" onclick="openModal()" style="margin-top: 40px;">Je prends ma place maintenant</button>
+                <p style="font-size: 18px; font-style: italic; color: #999;">Places limitées – prochaine cohorte bientôt</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white" style="background: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Elles l'ont fait, et voici ce qu'elles disent</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">Si je devais résumer cet accompagnement en un mot, je dirais révélateur. J'ai découvert des facettes de moi que je ne voyais pas. Ton écoute m'a permis de me reconnecter à l'essentiel et de mieux comprendre ce qui compte vraiment pour moi.</p>
+                    <div class="testimonial-author">— Chef de service</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">Cet accompagnement a été utile. J'ai particulièrement apprécié ta grande écoute et la qualité de nos échanges. Tu m'as offert un espace sécurisant, et j'en ressors avec des clés concrètes qui m'aident à avancer.</p>
+                    <div class="testimonial-author">— Directrice</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">Ton accompagnement a été bouleversant. J'ai aimé la manière dont tu combines le stratégique et l'humain. Cela m'a permis de clarifier mes idées, de prendre du recul et d'aligner mes choix avec ce que je veux vraiment. J'ai beaucoup apprécié ton écoute, ta bienveillance et ta capacité à me challenger sans jugement.</p>
+                    <div class="testimonial-author">— Directrice des opérations</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">J'ai enfin commencé ma formation en gestion de projet à BEM. Je tenais à vous remercier sincèrement. Votre accompagnement m'a permis d'y voir plus clair et de me décider enfin à franchir cette étape. Vos conseils ainsi que votre bienveillance continuent de m'accompagner dans ce parcours.</p>
+                    <div class="testimonial-author">— Salarié en quête de sens et reconversion</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-white">
+        <div class="container">
+            <h2 class="section-title">Tu hésites encore ?</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q : Je n'ai pas le temps…</div>
+                    <div class="faq-answer">Justement, ce Cercle est fait pour toi. Des sessions concentrées, des actions simples et tenables.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q : Et si je n'y arrivais pas ?</div>
+                    <div class="faq-answer">Tu ne seras pas seule. Tu seras entourée, soutenue, portée.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q : Comment se passent les masterclass ?</div>
+                    <div class="faq-answer">En ligne, en direct, avec accès au replay si tu rates une session.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q : Le paiement ?</div>
+                    <div class="faq-answer">85 000 F CFA / mois pendant 2 mois.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-message-section">
+                <div class="final-message-image">
+                    <img src="p3.jpg" alt="Néné G. BATHILY">
+                </div>
+                <div class="final-message-text">
+                    <h3 style="font-size: 30px; margin-bottom: 25px; font-weight: 700;">Ma promesse - Vous repartirez avec :</h3>
+                   
+                    
+                    <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.9;">
+                        <li style="font-size: 22px; padding-left: 28px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                            De nouvelles habitudes.
+                        </li>
+                        <li style="font-size: 22px; margin-bottom: 10px; padding-left: 28px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                            Une énergie retrouvée.
+                        </li>
+                        <li style="font-size: 22px; margin-bottom: 10px; padding-left: 28px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
+                            Une trajectoire professionnelle qui fait sens pour vous.
+                        </li>
+                    
+                    </ul>
+                </div>
+            </div>
+            
+            <h2 class="section-title" style="margin-top: 80px;">C'est ton moment</h2>
+            <p style="font-size: 24px; margin-bottom: 40px;">Tu as deux options aujourd'hui :</p>
+            <div class="final-choice">
+                <div class="choice-item choice-no">
+                    Continuer comme avant, en espérant que les choses changent toutes seules.
+                </div>
+                <div class="choice-item choice-yes">
+                    Ou choisir de te retrouver, de reprendre confiance, et d'avancer enfin vers la vie que tu désires.
+                </div>
+            </div>
+            <p style="font-size: 28px; margin: 50px 0; font-weight: 600;">C'est ton moment. Rejoins le Cercle des Patronnes Alignées.</p>
+            <button class="cta-button" onclick="openModal()">Oui, je veux rejoindre le Cercle</button>
+        </div>
+    </section>
+
+    <!-- Modal Formulaire -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            
+            <div id="form-section">
+                <h2 style="text-align: center; color: #0f3460; margin-bottom: 30px;">Réserve ta place</h2>
+                <form id="inscription-form" action="https://formspree.io/f/xldpnkwk"
+                    method="POST">
+                    <div class="form-group">
+                        <label>Nom *</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="Ex: 77 123 45 67">
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="exemple@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Fonction *</label>
+                        <input type="text" id="fonction" name="fonction" required placeholder="Ex: Entrepreneure">
+                    </div>
+                    <div style="display:none;">
+                    <input type="text" name="_gotcha">
+                    </div>
+                    <button type="submit" class="submit-button">Valider mon inscription</button>
+                </form>
+            </div>
+
+            <div id="payment-section" class="payment-info">
+                <h2 style="color: #0f3460; margin-bottom: 20px;">Merci <span id="prenom-display"></span> !</h2>
+                <p style="font-size: 18px; margin-bottom: 30px; line-height: 1.8;">
+                    Ton inscription au <strong>Cercle des Patronnes Alignées</strong> est presque terminée.<br>
+                    Pour finaliser et réserver ta place, effectue le paiement par Wave :
+                </p>
+                <div class="wave-number">76 639 09 52</div>
+                <p style="font-size: 20px; color: #0f3460; margin-top: 30px; font-weight: 700;">Montant : 85 000 F CFA</p>
+                <div style="background: rgba(83, 168, 255, 0.1); padding: 20px; border-radius: 15px; margin-top: 30px;">
+                    <p style="font-size: 16px; color: #333; margin-bottom: 15px;"><strong>Tes informations enregistrées :</strong></p>
+                    <p style="font-size: 15px; color: #666; margin: 5px 0;">Nom : <span id="nom-recap"></span></p>
+                    <p style="font-size: 15px; color: #666; margin: 5px 0;">Prénom : <span id="prenom-recap"></span></p>
+                    <p style="font-size: 15px; color: #666; margin: 5px 0;">Email : <span id="email-recap"></span></p>
+                    <p style="font-size: 15px; color: #666; margin: 5px 0;">Téléphone : <span id="telephone-recap"></span></p>
+                </div>
+                <p style="font-size: 16px; color: #666; margin-top: 30px; line-height: 1.7;">
+                    Une fois le paiement effectué, tu recevras toutes les informations de connexion au Cercle par email.
+                </p>
+                <button class="submit-button" onclick="closeModal()" style="margin-top: 40px;">J'ai compris</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Attendre que le DOM soit complètement chargé
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ Page chargée - Script initialisé');
+        });
+        
+        function openModal() {
+            console.log('🔵 Ouverture du modal');
+            const modal = document.getElementById('modal');
+            const formSection = document.getElementById('form-section');
+            const paymentSection = document.getElementById('payment-section');
+            
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (formSection) formSection.style.display = 'block';
+                if (paymentSection) {
+                    paymentSection.classList.remove('active');
+                    paymentSection.style.display = 'none';
+                }
+                console.log('✅ Modal ouvert');
+            } else {
+                console.error('❌ Modal non trouvé');
+            }
+        }
+
+        function closeModal() {
+            console.log('🔴 Fermeture du modal');
+            const modal = document.getElementById('modal');
+            const formSection = document.getElementById('form-section');
+            const paymentSection = document.getElementById('payment-section');
+            const form = document.getElementById('inscription-form');
+            
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                if (formSection) formSection.style.display = 'block';
+                if (paymentSection) {
+                    paymentSection.classList.remove('active');
+                    paymentSection.style.display = 'none';
+                }
+                if (form) form.reset();
+                console.log('✅ Modal fermé');
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            console.log('📝 Soumission du formulaire');
+            
+            // Récupération des données du formulaire
+            const nom = document.getElementById('nom').value;
+            const prenom = document.getElementById('prenom').value;
+            const telephone = document.getElementById('telephone').value;
+            const email = document.getElementById('email').value;
+            const fonction = document.getElementById('fonction').value;
+            
+            const data = {
+                nom: nom,
+                prenom: prenom,
+                telephone: telephone,
+                email: email,
+                fonction: fonction,
+                date: new Date().toLocaleString('fr-FR'),
+                montant: '85 000 F CFA'
+            };
+            
+            // Affichage dans la console
+            console.log('📋 NOUVELLE INSCRIPTION - Le Cercle des Patronnes Alignées');
+            console.log('==========================================');
+            console.log('Nom:', data.nom);
+            console.log('Prénom:', data.prenom);
+            console.log('Email:', data.email);
+            console.log('Téléphone:', data.telephone);
+            console.log('Fonction:', data.fonction);
+            console.log('Date inscription:', data.date);
+            console.log('Montant:', data.montant);
+            console.log('==========================================');
+            
+            // Sauvegarde locale
+            try {
+                let inscriptions = JSON.parse(localStorage.getItem('inscriptions_patronnes') || '[]');
+                inscriptions.push(data);
+                localStorage.setItem('inscriptions_patronnes', JSON.stringify(inscriptions));
+                console.log('✅ Données sauvegardées localement');
+            } catch (e) {
+                console.error('❌ Erreur sauvegarde:', e);
+            }
+            
+            // Affichage des informations sur la page de paiement
+            document.getElementById('prenom-display').textContent = prenom;
+            document.getElementById('nom-recap').textContent = nom;
+            document.getElementById('prenom-recap').textContent = prenom;
+            document.getElementById('email-recap').textContent = email;
+            document.getElementById('telephone-recap').textContent = telephone;
+            
+            // Passage à la page de paiement
+            const formSection = document.getElementById('form-section');
+            const paymentSection = document.getElementById('payment-section');
+            
+            if (formSection) formSection.style.display = 'none';
+            if (paymentSection) {
+                paymentSection.classList.add('active');
+                paymentSection.style.display = 'block';
+            }
+            
+            console.log('✅ Page de paiement affichée');
+        }
+        
+        // Fonction pour voir toutes les inscriptions (Console)
+        function voirInscriptions() {
+            const inscriptions = JSON.parse(localStorage.getItem('inscriptions_patronnes') || '[]');
+            console.log('📊 TOUTES LES INSCRIPTIONS (' + inscriptions.length + ')');
+            console.table(inscriptions);
+            return inscriptions;
+        }
+        
+        // Fonction pour exporter les inscriptions en CSV
+        function exporterInscriptions() {
+            const inscriptions = JSON.parse(localStorage.getItem('inscriptions_patronnes') || '[]');
+            if (inscriptions.length === 0) {
+                alert('Aucune inscription à exporter');
+                return;
+            }
+            
+            let csv = 'Nom,Prénom,Email,Téléphone,Fonction,Date,Montant\n';
+            inscriptions.forEach(ins => {
+                csv += `${ins.nom},${ins.prenom},${ins.email},${ins.telephone},${ins.fonction},"${ins.date}",${ins.montant}\n`;
+            });
+            
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'inscriptions_patronnes_alignees_' + new Date().toISOString().slice(0,10) + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            console.log('✅ Export CSV réussi');
+        }
+
+        // Fermer le modal en cliquant en dehors
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.transformation-card, .testimonial, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+        
+        // Message de bienvenue dans la console
+        console.log('%cLe Cercle des Patronnes Alignées', 'font-size: 20px; font-weight: bold; color: #53a8ff;');
+        console.log('%cPour voir toutes les inscriptions, tapez: voirInscriptions()', 'color: #0f3460;');
+        console.log('%cPour exporter en CSV, tapez: exporterInscriptions()', 'color: #0f3460;');
+    </script>
+</body>
+</html>
