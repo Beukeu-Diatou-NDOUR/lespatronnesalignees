@@ -540,6 +540,12 @@
             transform: translateY(-2px);
         }
 
+        .submit-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .payment-info {
             display: none;
         }
@@ -613,6 +619,20 @@
             color: white;
         }
 
+        .error-message {
+            background: #ffe5e5;
+            color: #d32f2f;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d32f2f;
+            display: none;
+        }
+
+        .error-message.active {
+            display: block;
+        }
+
         @media (max-width: 968px) {
             .final-message-section {
                 grid-template-columns: 1fr;
@@ -625,7 +645,6 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-        }
             h1 { font-size: 42px; }
             .section-title { font-size: 36px; }
             .hero-subtitle { font-size: 22px; }
@@ -636,18 +655,16 @@
             .modal-content {
                 padding: 30px;
             }
+        }
 
        .hero-image-section img {
           max-width: 100%;
           height: auto;
           display: block;
-          margin: 0 auto;       /* centre l'image */
-          object-fit: contain;  /* garde l'image entière sans la couper */
-          border-radius: 15px;  /* optionnel : coins arrondis élégants */
+          margin: 0 auto;
+          object-fit: contain;
+          border-radius: 15px;
         }
-
-
-    
     </style>
 </head>
 <body>
@@ -659,7 +676,6 @@
                 <p class="hero-subtitle">Rejoins le Cercle des Patronnes Alignées et retrouve confiance, clarté et sérénité dans ta vie professionnelle et personnelle.</p>
                 <button class="cta-button" onclick="openModal()">Oui, je réserve ma place</button>
             </div>
-            
         </div>
     </section>
 
@@ -703,13 +719,13 @@
                     <div class="about-text">
                         <h2 class="section-title" style="text-align: left;">Qui suis-je pour t'accompagner ?</h2>
                         <h3 style="font-size: 32px; color: #53a8ff; margin-bottom: 30px;">Néné G. BATHILY</h3>
-                        <p style="font-size: 22px; padding-left: 25px; position: relative;">Je m’appelle Néné Bathily.
-                            Je suis coach certifiée et consultante en stratégie, avec plus de 15 ans d’expérience dans l’accompagnement de dirigeants, de managers et de femmes en quête de sens.
-                            Pendant des années, j’ai vu des femmes brillantes, talentueuses, mais épuisées.
-                            Des femmes qui doutaient d’elles malgré leur potentiel.
-                            Des femmes qui avaient des rêves… mais qui croyaient que c’était trop difficile.
-                            Moi aussi, j’ai traversé des épreuves qui m’ont forcée à me réaligner.
-                            C’est pour ça que j’ai créé ce Cercle : pour offrir un espace sûr, bienveillant et puissant, où tu n’as plus à tout porter seule.
+                        <p style="font-size: 22px; padding-left: 25px; position: relative;">Je m'appelle Néné Bathily.
+                            Je suis coach certifiée et consultante en stratégie, avec plus de 15 ans d'expérience dans l'accompagnement de dirigeants, de managers et de femmes en quête de sens.
+                            Pendant des années, j'ai vu des femmes brillantes, talentueuses, mais épuisées.
+                            Des femmes qui doutaient d'elles malgré leur potentiel.
+                            Des femmes qui avaient des rêves… mais qui croyaient que c'était trop difficile.
+                            Moi aussi, j'ai traversé des épreuves qui m'ont forcée à me réaligner.
+                            C'est pour ça que j'ai créé ce Cercle : pour offrir un espace sûr, bienveillant et puissant, où tu n'as plus à tout porter seule.
                         </p> <br>
                         
                         <div style="font-size: 18px; line-height: 1.9; color: #333;">
@@ -813,19 +829,20 @@
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <p class="testimonial-text">Si je devais résumer cet accompagnement en un mot, je dirais révélateur. J'ai découvert des facettes de moi que je ne voyais pas. Ton écoute m'a permis de me reconnecter à l'essentiel et de mieux comprendre ce qui compte vraiment pour moi.</p>
-                    <div class="testimonial-author">— Chef de service</div>
+                    <div class="testimonial-author">– Chef de service</div>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">Cet accompagnement a été utile. J'ai particulièrement apprécié ta grande écoute et la qualité de nos échanges. Tu m'as offert un espace sécurisant, et j'en ressors avec des clés concrètes qui m'aident à avancer.</p>
-                    <div class="testimonial-author">— Directrice</div>
+                    <div class="testimonial-author">– Directrice</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text">Ton accompagnement a été bouleversant. J'ai aimé la manière dont tu combines le stratégique et l'humain. Cela m'a permis de clarifier mes idées, de prendre du recul et d'aligner mes choix avec ce que je veux vraiment. J'ai beaucoup apprécié ton écoute, ta bienveillance et ta capacité à me challenger sans jugement.</p>
-                    <div class="testimonial-author">— Directrice des opérations</div>
+                    <p class="testimonial-text">Ton accompagnement a été bouleversant. J'ai aimé la manière dont tu combines le stratégique et l'humain. Cela m'a permis de clarifier mes idées, de prendre du recul et d'aligner mes choix avec ce
+                        que je veux vraiment. J'ai beaucoup apprécié ton écoute, ta bienveillance et ta capacité à me challenger sans jugement.</p>
+                    <div class="testimonial-author">– Directrice des opérations</div>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">J'ai enfin commencé ma formation en gestion de projet à BEM. Je tenais à vous remercier sincèrement. Votre accompagnement m'a permis d'y voir plus clair et de me décider enfin à franchir cette étape. Vos conseils ainsi que votre bienveillance continuent de m'accompagner dans ce parcours.</p>
-                    <div class="testimonial-author">— Salarié en quête de sens et reconversion</div>
+                    <div class="testimonial-author">– Salarié en quête de sens et reconversion</div>
                 </div>
             </div>
         </div>
@@ -863,8 +880,6 @@
                 </div>
                 <div class="final-message-text">
                     <h3 style="font-size: 30px; margin-bottom: 25px; font-weight: 700;">Ma promesse - Vous repartirez avec :</h3>
-                   
-                    
                     <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.9;">
                         <li style="font-size: 22px; padding-left: 28px; position: relative;">
                             <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
@@ -878,7 +893,6 @@
                             <span style="position: absolute; left: 0; color: #53a8ff;">→</span>
                             Une trajectoire professionnelle qui fait sens pour vous.
                         </li>
-                    
                     </ul>
                 </div>
             </div>
@@ -905,8 +919,10 @@
             
             <div id="form-section">
                 <h2 style="text-align: center; color: #0f3460; margin-bottom: 30px;">Réserve ta place</h2>
-                <form id="inscription-form" action="https://formspree.io/f/meorkrwr"
-                    method="POST">
+                
+                <div id="error-message" class="error-message"></div>
+                
+                <form id="inscription-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label>Nom *</label>
                         <input type="text" id="nom" name="nom" required>
@@ -927,10 +943,7 @@
                         <label>Fonction *</label>
                         <input type="text" id="fonction" name="fonction" required placeholder="Ex: Entrepreneure">
                     </div>
-                    <div style="display:none;">
-                    <input type="text" name="_gotcha">
-                    </div>
-                    <button type="submit" class="submit-button">Valider mon inscription</button>
+                    <button type="submit" id="submit-btn" class="submit-button">Valider mon inscription</button>
                 </form>
             </div>
 
@@ -958,7 +971,6 @@
     </div>
 
     <script>
-        // Attendre que le DOM soit complètement chargé
         document.addEventListener('DOMContentLoaded', function() {
             console.log('✅ Page chargée - Script initialisé');
         });
@@ -968,6 +980,7 @@
             const modal = document.getElementById('modal');
             const formSection = document.getElementById('form-section');
             const paymentSection = document.getElementById('payment-section');
+            const errorMessage = document.getElementById('error-message');
             
             if (modal) {
                 modal.classList.add('active');
@@ -976,6 +989,10 @@
                 if (paymentSection) {
                     paymentSection.classList.remove('active');
                     paymentSection.style.display = 'none';
+                }
+                if (errorMessage) {
+                    errorMessage.classList.remove('active');
+                    errorMessage.textContent = '';
                 }
                 console.log('✅ Modal ouvert');
             } else {
@@ -989,6 +1006,7 @@
             const formSection = document.getElementById('form-section');
             const paymentSection = document.getElementById('payment-section');
             const form = document.getElementById('inscription-form');
+            const errorMessage = document.getElementById('error-message');
             
             if (modal) {
                 modal.classList.remove('active');
@@ -999,13 +1017,26 @@
                     paymentSection.style.display = 'none';
                 }
                 if (form) form.reset();
+                if (errorMessage) {
+                    errorMessage.classList.remove('active');
+                    errorMessage.textContent = '';
+                }
                 console.log('✅ Modal fermé');
             }
         }
 
-        function handleSubmit(event) {
+        async function handleSubmit(event) {
             event.preventDefault();
             console.log('📝 Soumission du formulaire');
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const errorMessage = document.getElementById('error-message');
+            
+            // Désactiver le bouton pendant l'envoi
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            errorMessage.classList.remove('active');
+            errorMessage.textContent = '';
             
             // Récupération des données du formulaire
             const nom = document.getElementById('nom').value;
@@ -1024,7 +1055,6 @@
                 montant: '95 000 F CFA'
             };
             
-            // Affichage dans la console
             console.log('📋 NOUVELLE INSCRIPTION - Le Cercle des Patronnes Alignées');
             console.log('==========================================');
             console.log('Nom:', data.nom);
@@ -1036,34 +1066,72 @@
             console.log('Montant:', data.montant);
             console.log('==========================================');
             
-            // Sauvegarde locale
+            // Envoi des données à Formspree
             try {
-                let inscriptions = JSON.parse(localStorage.getItem('inscriptions_patronnes') || '[]');
-                inscriptions.push(data);
-                localStorage.setItem('inscriptions_patronnes', JSON.stringify(inscriptions));
-                console.log('✅ Données sauvegardées localement');
-            } catch (e) {
-                console.error('❌ Erreur sauvegarde:', e);
+                const formData = new FormData();
+                formData.append('nom', nom);
+                formData.append('prenom', prenom);
+                formData.append('telephone', telephone);
+                formData.append('email', email);
+                formData.append('fonction', fonction);
+                
+                const response = await fetch('https://formspree.io/f/meorkrwr', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'envoi du formulaire');
+                }
+                
+                console.log('✅ Données envoyées à Formspree avec succès');
+                
+                // Sauvegarde locale (backup)
+                try {
+                    let inscriptions = JSON.parse(localStorage.getItem('inscriptions_patronnes') || '[]');
+                    inscriptions.push(data);
+                    localStorage.setItem('inscriptions_patronnes', JSON.stringify(inscriptions));
+                    console.log('✅ Données sauvegardées localement');
+                } catch (e) {
+                    console.error('⚠️ Erreur sauvegarde locale:', e);
+                }
+                
+                // Affichage des informations sur la page de paiement
+                document.getElementById('prenom-display').textContent = prenom;
+                document.getElementById('nom-recap').textContent = nom;
+                document.getElementById('prenom-recap').textContent = prenom;
+                document.getElementById('email-recap').textContent = email;
+                document.getElementById('telephone-recap').textContent = telephone;
+                
+                // Passage à la page de paiement
+                const formSection = document.getElementById('form-section');
+                const paymentSection = document.getElementById('payment-section');
+                
+                if (formSection) formSection.style.display = 'none';
+                if (paymentSection) {
+                    paymentSection.classList.add('active');
+                    paymentSection.style.display = 'block';
+                }
+                
+                console.log('✅ Page de paiement affichée');
+                
+            } catch (error) {
+                console.error('❌ Erreur lors de l\'envoi:', error);
+                
+                // Afficher le message d'erreur
+                errorMessage.textContent = '❌ Une erreur est survenue lors de l\'envoi de votre inscription. Veuillez vérifier votre connexion internet et réessayer.';
+                errorMessage.classList.add('active');
+                
+                // Réactiver le bouton
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Valider mon inscription';
+                
+                // Scroll vers le message d'erreur
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-            
-            // Affichage des informations sur la page de paiement
-            document.getElementById('prenom-display').textContent = prenom;
-            document.getElementById('nom-recap').textContent = nom;
-            document.getElementById('prenom-recap').textContent = prenom;
-            document.getElementById('email-recap').textContent = email;
-            document.getElementById('telephone-recap').textContent = telephone;
-            
-            // Passage à la page de paiement
-            const formSection = document.getElementById('form-section');
-            const paymentSection = document.getElementById('payment-section');
-            
-            if (formSection) formSection.style.display = 'none';
-            if (paymentSection) {
-                paymentSection.classList.add('active');
-                paymentSection.style.display = 'block';
-            }
-            
-            console.log('✅ Page de paiement affichée');
         }
         
         // Fonction pour voir toutes les inscriptions (Console)
@@ -1135,46 +1203,5 @@
         console.log('%cPour voir toutes les inscriptions, tapez: voirInscriptions()', 'color: #0f3460;');
         console.log('%cPour exporter en CSV, tapez: exporterInscriptions()', 'color: #0f3460;');
     </script>
-
-    <script>
-  const form = document.getElementById('inscriptionForm');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Empêche l'envoi normal du formulaire
-
-    // Récupérer les infos du formulaire
-    const formData = {
-      nom: form.Nom.value,
-      prenom: form.Prénom.value,
-      tel: form.Téléphone.value,
-      fonction: form.Fonction.value,
-      email: form.Email.value
-    };
-
-    // Stocker les infos pour la page confirmation
-    localStorage.setItem('userInfo', JSON.stringify(formData));
-
-    // Préparer l'envoi à Formspree via fetch
-    const data = new FormData(form);
-
-    fetch(form.action, {
-      method: 'POST',
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => {
-      // Redirection après envoi réussi
-      window.location.href = 'confirmation.html';
-    })
-    .catch(error => {
-      alert("Une erreur est survenue, réessayez.");
-      console.error(error);
-    });
-  });
-</script>
-
-
 </body>
 </html>
