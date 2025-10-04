@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Cercle des Patronnes Alignées</title>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Brittany+Signature&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
     <style>
         * {
             margin: 0;
@@ -243,12 +244,28 @@
             font-weight: 600;
         }
 
-        .transformation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
+       .transformation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.transformation-card {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 320px;
+}
+
+/* Forcer les 2 derniers à être centrés */
+.transformation-grid > .transformation-card:nth-child(4),
+.transformation-grid > .transformation-card:nth-child(5) {
+    flex: 0 0 calc(33.333% - 20px);
+}
+
 
         .transformation-card {
             background: white;
@@ -355,11 +372,19 @@
         }
 
         .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+    justify-items: center;
+}
+
+/* Centrer le dernier témoignage s'il est seul sur sa ligne */
+.testimonials-grid > .testimonial:last-child:nth-child(4) {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    width: 100%;
+}
 
         .testimonial {
             background: white;
@@ -718,8 +743,7 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h2 class="section-title" style="text-align: left;">Qui suis-je pour t'accompagner ?</h2>
-                        <h3 style="font-size: 32px; color: #53a8ff; margin-bottom: 30px;">Néné G. BATHILY</h3>
-                        <p style="font-size: 22px; padding-left: 25px; position: relative;">Je m'appelle Néné Bathily.
+                        <p style="font-size: 22px; text-align: left; margin-left: 0;">Je m'appelle Néné Bathily.
                             Je suis coach certifiée et consultante en stratégie, avec plus de 15 ans d'expérience dans l'accompagnement de dirigeants, de managers et de femmes en quête de sens.
                             Pendant des années, j'ai vu des femmes brillantes, talentueuses, mais épuisées.
                             Des femmes qui doutaient d'elles malgré leur potentiel.
