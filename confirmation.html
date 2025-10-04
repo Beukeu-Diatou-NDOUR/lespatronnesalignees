@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Confirmation inscription</title>
+<style>
+  body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+  .info { margin-bottom: 20px; }
+  .highlight { font-weight: bold; color: #1a73e8; }
+</style>
+</head>
+<body>
+
+<h1>Merci pour votre inscription !</h1>
+
+<div class="info" id="userInfo"></div>
+
+<p>Pour valider votre inscription, veuillez effectuer le paiement par Wave au numéro : <span class="highlight">766390952</span></p>
+
+<script>
+  // Récupérer les infos depuis localStorage
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+  if(userInfo) {
+    const infoDiv = document.getElementById('userInfo');
+    infoDiv.innerHTML = `
+      <p>Nom : <strong>${userInfo.nom}</strong></p>
+      <p>Prénom : <strong>${userInfo.prenom}</strong></p>
+      <p>Téléphone : <strong>${userInfo.tel}</strong></p>
+      <p>Fonction : <strong>${userInfo.fonction}</strong></p>
+      <p>Email : <strong>${userInfo.email}</strong></p>
+    `;
+    // Optionnel : supprimer les infos du localStorage après affichage
+    localStorage.removeItem('userInfo');
+  }
+</script>
+
+</body>
+</html>

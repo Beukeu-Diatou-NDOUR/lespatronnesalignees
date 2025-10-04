@@ -905,7 +905,7 @@
             
             <div id="form-section">
                 <h2 style="text-align: center; color: #0f3460; margin-bottom: 30px;">Réserve ta place</h2>
-                <form id="inscription-form" action="https://formspree.io/f/xldpnkwk"
+                <form id="inscription-form" action="https://formspree.io/f/meorkrwr"
                     method="POST">
                     <div class="form-group">
                         <label>Nom *</label>
@@ -1135,5 +1135,46 @@
         console.log('%cPour voir toutes les inscriptions, tapez: voirInscriptions()', 'color: #0f3460;');
         console.log('%cPour exporter en CSV, tapez: exporterInscriptions()', 'color: #0f3460;');
     </script>
+
+    <script>
+  const form = document.getElementById('inscriptionForm');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche l'envoi normal du formulaire
+
+    // Récupérer les infos du formulaire
+    const formData = {
+      nom: form.Nom.value,
+      prenom: form.Prénom.value,
+      tel: form.Téléphone.value,
+      fonction: form.Fonction.value,
+      email: form.Email.value
+    };
+
+    // Stocker les infos pour la page confirmation
+    localStorage.setItem('userInfo', JSON.stringify(formData));
+
+    // Préparer l'envoi à Formspree via fetch
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      // Redirection après envoi réussi
+      window.location.href = 'confirmation.html';
+    })
+    .catch(error => {
+      alert("Une erreur est survenue, réessayez.");
+      console.error(error);
+    });
+  });
+</script>
+
+
 </body>
 </html>
